@@ -5,12 +5,13 @@ import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
  
-
+//This class Simulates the barbershop with a main chair and a queue of waiting chairs
 public class Barbershop {
     private static final int NUM_WAITING_CHAIRS = 5;
     private String mainChair = null;
     private Queue<String> waitingChairs = new LinkedList<>();
 
+ // This class runs the simulation, generating random events and displaying the state of the barbershop.
     public static void main(String[] args) {
         Barbershop shop = new Barbershop();
         Scanner scanner = new Scanner(System.in);
@@ -47,7 +48,7 @@ public class Barbershop {
 
         scanner.close();
     }
-
+   // This class moves a client from the waiting queue to the main chair when a haircut is finished.
     private String finishHaircut() {
         if (mainChair == null) {
             return "-- none";
@@ -56,7 +57,7 @@ public class Barbershop {
         mainChair = waitingChairs.poll();
         return "-- " + finishedClient;
     }
-
+    // This class handles the arrival of VIP clients, giving them priority in the waiting queue.
     private String arriveVIP(String vipClient) {
         if (mainChair == null) {
             mainChair = vipClient;
@@ -79,7 +80,7 @@ public class Barbershop {
             return "+- " + vipClient;
         }
     }
-
+  // This class handles the arrival of ordinary clients, placing them in the waiting queue if there's space.
     private String arriveOrdinary(String ordClient) {
         if (mainChair == null) {
             mainChair = ordClient;
@@ -91,7 +92,7 @@ public class Barbershop {
             return "+- " + ordClient;
         }
     }
-
+     // This class print the current state of the barbering shop,including the main chair and the waiting clients
     private void displayState(int x, String event) {
         System.out.print(x + " ---> (" + event + ") [");
 
