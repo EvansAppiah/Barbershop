@@ -1,4 +1,13 @@
-I used Java Eclipse IDE in coding the project
-The loops used in the project are(While, for,If)
-The Datastructures  used in the project are LinkedList and Queue
-Images of how the project works in the Repository
+BARBERING SHOP SIMULATION
+
+OVERVIEW
+
+This project simulates the operations of a barbering shop where it shows the state of the barbering shop..It includes the arrival of the ordinary client and the VIP client...
+
+
+FEATURES OF THE PROJECT
+
+
+A class that store the arrival of the ordinary client 
+A class that store the arrival of the VIP client 
+
